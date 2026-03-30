@@ -1,4 +1,4 @@
-import { pgTable, uuid, varchar, text, boolean, integer, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, uuid, varchar, text, boolean, integer, timestamp, index } from "drizzle-orm/pg-core";
 
 // ─── Auth Tables (NextAuth.js compatible) ────────────────────────────
 
@@ -25,14 +25,19 @@ export const accounts = pgTable("accounts", {
   tokenType:         varchar("token_type", { length: 50 }),
   scope:             varchar("scope", { length: 255 }),
   idToken:           text("id_token"),
-});
+}, (table) => [
+  index("idx_accounts_user_id").on(table.userId),
+]);
 
 export const sessions = pgTable("sessions", {
   id:           uuid("id").defaultRandom().primaryKey(),
   userId:       uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
   sessionToken: varchar("session_token", { length: 255 }).notNull().unique(),
   expires:      timestamp("expires", { mode: "date" }).notNull(),
-});
+}, (table) => [
+  index("idx_sessions_user_id").on(table.userId),
+  index("idx_sessions_token").on(table.sessionToken),
+]);
 
 export const verificationTokens = pgTable("verification_tokens", {
   identifier: varchar("identifier", { length: 255 }).notNull(),
@@ -42,14 +47,6 @@ export const verificationTokens = pgTable("verification_tokens", {
 
 // ─── Application Tables ──────────────────────────────────────────────
 
-/**
- * Task statuses:
- *   "todo"        — Not started
- *   "in_progress" — At least one subtask completed, or manually set
- *   "completed"   — All subtasks completed, or manually marked
- *   "overdue"     — Computed: end_date < now AND status != "completed"
- *                   (this is a virtual status, NOT stored in DB)
- */
 export const tasks = pgTable("tasks", {
   id:          uuid("id").defaultRandom().primaryKey(),
   userId:      uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
@@ -61,7 +58,11 @@ export const tasks = pgTable("tasks", {
   sortOrder:   integer("sort_order").notNull().default(0),
   createdAt:   timestamp("created_at", { mode: "date" }).defaultNow().notNull(),
   updatedAt:   timestamp("updated_at", { mode: "date" }).defaultNow().notNull(),
-});
+}, (table) => [
+  index("idx_tasks_user_id").on(table.userId),
+  index("idx_tasks_status").on(table.status),
+  index("idx_tasks_end_date").on(table.endDate),
+]);
 
 export const subtasks = pgTable("subtasks", {
   id:          uuid("id").defaultRandom().primaryKey(),
@@ -71,4 +72,6 @@ export const subtasks = pgTable("subtasks", {
   sortOrder:   integer("sort_order").notNull().default(0),
   createdAt:   timestamp("created_at", { mode: "date" }).defaultNow().notNull(),
   updatedAt:   timestamp("updated_at", { mode: "date" }).defaultNow().notNull(),
-});
+}, (table) => [
+  index("idx_subtasks_task_id").on(table.taskId),
+]);
