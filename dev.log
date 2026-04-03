@@ -1324,3 +1324,691 @@ https://react.dev/link/hydration-mismatch
 +                                                           Create one
                   ...
  
+✓ Compiled in 179ms
+✓ Compiled in 118ms
+✓ Compiled in 120ms
+✓ Compiled in 81ms
+✓ Compiled in 125ms
+✓ Compiled in 103ms
+✓ Compiled in 3ms
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 663ms (next.js: 199ms, proxy.ts: 23ms, application-code: 441ms)
+ GET /login 200 in 660ms (next.js: 304ms, proxy.ts: 18ms, application-code: 339ms)
+ GET /register 200 in 743ms (next.js: 403ms, proxy.ts: 85ms, application-code: 255ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 333ms (next.js: 23ms, proxy.ts: 15ms, application-code: 294ms)
+ GET /login 200 in 324ms (next.js: 76ms, proxy.ts: 14ms, application-code: 235ms)
+ GET /register 200 in 321ms (next.js: 114ms, proxy.ts: 10ms, application-code: 196ms)
+ GET /login 200 in 252ms (next.js: 67ms, proxy.ts: 15ms, application-code: 170ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 256ms (next.js: 12ms, proxy.ts: 16ms, application-code: 228ms)
+ GET /register 200 in 282ms (next.js: 8ms, proxy.ts: 13ms, application-code: 261ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 281ms (next.js: 46ms, proxy.ts: 11ms, application-code: 223ms)
+ GET /login 200 in 297ms (next.js: 10ms, proxy.ts: 19ms, application-code: 268ms)
+ GET /register 200 in 295ms (next.js: 49ms, proxy.ts: 17ms, application-code: 229ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 297ms (next.js: 101ms, proxy.ts: 11ms, application-code: 185ms)
+ GET /login 200 in 207ms (next.js: 8ms, proxy.ts: 53ms, application-code: 146ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 235ms (next.js: 36ms, proxy.ts: 10ms, application-code: 189ms)
+ GET /register 200 in 239ms (next.js: 7ms, proxy.ts: 11ms, application-code: 221ms)
+ GET /login 200 in 267ms (next.js: 14ms, proxy.ts: 12ms, application-code: 241ms)
+ GET /register 200 in 265ms (next.js: 51ms, proxy.ts: 10ms, application-code: 203ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 269ms (next.js: 12ms, proxy.ts: 83ms, application-code: 175ms)
+ GET /login 200 in 191ms (next.js: 46ms, proxy.ts: 6ms, application-code: 139ms)
+ GET /register 200 in 321ms (next.js: 7ms, proxy.ts: 8ms, application-code: 306ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 321ms (next.js: 36ms, proxy.ts: 8ms, application-code: 277ms)
+ GET /login 200 in 311ms (next.js: 11ms, proxy.ts: 11ms, application-code: 289ms)
+ GET /register 200 in 310ms (next.js: 43ms, proxy.ts: 10ms, application-code: 257ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 312ms (next.js: 16ms, proxy.ts: 75ms, application-code: 221ms)
+ GET /login 200 in 279ms (next.js: 56ms, proxy.ts: 11ms, application-code: 212ms)
+ GET /register 200 in 274ms (next.js: 6ms, proxy.ts: 10ms, application-code: 259ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 274ms (next.js: 34ms, proxy.ts: 9ms, application-code: 231ms)
+ GET /login 200 in 276ms (next.js: 8ms, proxy.ts: 9ms, application-code: 259ms)
+ GET /register 200 in 275ms (next.js: 46ms, proxy.ts: 8ms, application-code: 221ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 197ms (next.js: 10ms, proxy.ts: 7ms, application-code: 180ms)
+ GET /login 200 in 231ms (next.js: 44ms, proxy.ts: 6ms, application-code: 182ms)
+ GET /register 200 in 227ms (next.js: 9ms, proxy.ts: 15ms, application-code: 202ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 226ms (next.js: 35ms, proxy.ts: 15ms, application-code: 176ms)
+ GET /login 200 in 192ms (next.js: 8ms, proxy.ts: 6ms, application-code: 177ms)
+ GET /register 200 in 219ms (next.js: 47ms, proxy.ts: 6ms, application-code: 165ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 184ms (next.js: 9ms, proxy.ts: 30ms, application-code: 144ms)
+ GET /login 200 in 186ms (next.js: 32ms, proxy.ts: 6ms, application-code: 149ms)
+ GET /register 200 in 211ms (next.js: 6ms, proxy.ts: 7ms, application-code: 198ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 211ms (next.js: 36ms, proxy.ts: 7ms, application-code: 169ms)
+ GET /login 200 in 154ms (next.js: 12ms, proxy.ts: 6ms, application-code: 136ms)
+ GET /register 200 in 201ms (next.js: 42ms, proxy.ts: 8ms, application-code: 152ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 198ms (next.js: 6ms, proxy.ts: 37ms, application-code: 155ms)
+ GET /login 200 in 196ms (next.js: 27ms, proxy.ts: 35ms, application-code: 133ms)
+ GET /register 200 in 135ms (next.js: 8ms, proxy.ts: 5ms, application-code: 121ms)
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 132ms (next.js: 30ms, proxy.ts: 5ms, application-code: 97ms)
+ GET /login 200 in 76ms (next.js: 7ms, proxy.ts: 7ms, application-code: 63ms)
+ GET /register 200 in 69ms (next.js: 7ms, proxy.ts: 32ms, application-code: 30ms)
+✓ Compiled in 108ms
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 356ms (next.js: 4ms, proxy.ts: 8ms, application-code: 343ms)
+ GET /login 200 in 73ms (next.js: 4ms, proxy.ts: 6ms, application-code: 63ms)
+ GET /register 200 in 96ms (next.js: 4ms, proxy.ts: 6ms, application-code: 86ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="register/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/register" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="(auth)/reg...">
+                        <SegmentTrieNode>
+                        <RegisterPage>
+                          <RegisterForm>
+                            <Card className="shadow-lg ...">
+                              <div
+                                data-slot="card"
+                                data-size="default"
+                                className={"group/card flex flex-col gap-4 overflow-hidden rounded-xl bg-card py-4 te..."}
+-                               data--h-bstatus="0OBSERVED"
+                              >
+                                <CardHeader>
+                                  <div
+                                    data-slot="card-header"
+                                    className="group/card-header @container/card-header grid auto-rows-min items-start..."
+-                                   data--h-bstatus="0OBSERVED"
+                                  >
+                                    <CardTitle className="text-2xl">
+                                      <div
+                                        data-slot="card-title"
+                                        className="font-heading font-medium group-data-[size=sm]/card:text-sm text-2xl"
+-                                       data--h-bstatus="0OBSERVED"
+                                      >
++                                       Create account
+                                    <CardDescription>
+                                      <div
+                                        data-slot="card-description"
+                                        className="text-sm text-muted-foreground"
+-                                       data--h-bstatus="0OBSERVED"
+                                      >
++                                       Start managing your tasks today
+                                <CardContent>
+                                  <div
+                                    data-slot="card-content"
+                                    className="px-4 group-data-[size=sm]/card:px-3"
+-                                   data--h-bstatus="0OBSERVED"
+                                  >
+                                    <form
+                                      onSubmit={function}
+                                      className="space-y-4"
+-                                     data--h-bstatus="0OBSERVED"
+                                    >
+                                      <div
+                                        className="space-y-2"
+-                                       data--h-bstatus="0OBSERVED"
+                                      >
+                                        <Label htmlFor="name">
+                                          <label
+                                            data-slot="label"
+                                            className="flex items-center gap-2 text-sm leading-none font-medium select..."
+                                            htmlFor="name"
+-                                           data--h-bstatus="0OBSERVED"
+                                          >
++                                           Full Name
+                                        <div
+                                          className="relative"
+-                                         data--h-bstatus="0OBSERVED"
+                                        >
+                                          <User className="absolute l...">
+                                            <svg
+                                              ref={null}
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              width={24}
+                                              height={24}
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                              stroke="currentColor"
+                                              strokeWidth={2}
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              className="lucide lucide-user absolute left-3 top-2.5 h-4 w-4 text-muted..."
+                                              aria-hidden="true"
+-                                             data--h-bstatus="0OBSERVED"
+                                            >
+                                              <path
+                                                d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                              <circle
+                                                cx="12"
+                                                cy="7"
+                                                r="4"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                          <Input id="name" placeholder="John Doe" className="pl-9" disabled={false} ...>
+                                            <Input type={undefined} data-slot="input" className="h-8 w-full..." id="name" ...>
+                                              <FieldControl ref={function ref} type={undefined} data-slot="input" ...>
+                                                <input
+                                                  id="name"
+                                                  disabled={false}
+                                                  name="name"
+                                                  ref={function}
+                                                  aria-labelledby={undefined}
+                                                  autoFocus={false}
+                                                  defaultValue={undefined}
+                                                  onChange={function}
+                                                  onFocus={function onFocus}
+                                                  onBlur={function}
+                                                  onKeyDown={function onKeyDown}
+                                                  type={undefined}
+                                                  data-slot="input"
+                                                  placeholder="John Doe"
+                                                  className="h-8 w-full min-w-0 rounded-lg border border-input bg-tran..."
+-                                                 data--h-bstatus="0OBSERVED"
+                                                >
+                                      <div
+                                        className="space-y-2"
+-                                       data--h-bstatus="0OBSERVED"
+                                      >
+                                        <Label htmlFor="email">
+                                          <label
+                                            data-slot="label"
+                                            className="flex items-center gap-2 text-sm leading-none font-medium select..."
+                                            htmlFor="email"
+-                                           data--h-bstatus="0OBSERVED"
+                                          >
++                                           Email
+                                        <div
+                                          className="relative"
+-                                         data--h-bstatus="0OBSERVED"
+                                        >
+                                          <Mail className="absolute l...">
+                                            <svg
+                                              ref={null}
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              width={24}
+                                              height={24}
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                              stroke="currentColor"
+                                              strokeWidth={2}
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              className="lucide lucide-mail absolute left-3 top-2.5 h-4 w-4 text-muted..."
+                                              aria-hidden="true"
+-                                             data--h-bstatus="0OBSERVED"
+                                            >
+                                              <path
+                                                d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                              <rect
+                                                x="2"
+                                                y="4"
+                                                width="20"
+                                                height="16"
+                                                rx="2"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                          <Input id="email" type="email" placeholder="you@exampl..." className="pl-9" ...>
+                                            <Input type="email" data-slot="input" className="h-8 w-full..." id="email" ...>
+                                              <FieldControl ref={function ref} type="email" data-slot="input" ...>
+                                                <input
+                                                  id="email"
+                                                  disabled={false}
+                                                  name="email"
+                                                  ref={function}
+                                                  aria-labelledby={undefined}
+                                                  autoFocus={false}
+                                                  defaultValue={undefined}
+                                                  onChange={function}
+                                                  onFocus={function onFocus}
+                                                  onBlur={function}
+                                                  onKeyDown={function onKeyDown}
+                                                  type="email"
+                                                  data-slot="input"
+                                                  placeholder="you@example.com"
+                                                  className="h-8 w-full min-w-0 rounded-lg border border-input bg-tran..."
+-                                                 data--h-bstatus="0OBSERVED"
+                                                >
+                                      <div
+                                        className="space-y-2"
+-                                       data--h-bstatus="0OBSERVED"
+                                      >
+                                        <Label htmlFor="password">
+                                          <label
+                                            data-slot="label"
+                                            className="flex items-center gap-2 text-sm leading-none font-medium select..."
+                                            htmlFor="password"
+-                                           data--h-bstatus="0OBSERVED"
+                                          >
++                                           Password
+                                        <div
+                                          className="relative"
+-                                         data--h-bstatus="0OBSERVED"
+                                        >
+                                          <Lock className="absolute l...">
+                                            <svg
+                                              ref={null}
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              width={24}
+                                              height={24}
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                              stroke="currentColor"
+                                              strokeWidth={2}
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              className="lucide lucide-lock absolute left-3 top-2.5 h-4 w-4 text-muted..."
+                                              aria-hidden="true"
+-                                             data--h-bstatus="0OBSERVED"
+                                            >
+                                              <rect
+                                                width="18"
+                                                height="11"
+                                                x="3"
+                                                y="11"
+                                                rx="2"
+                                                ry="2"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                              <path
+                                                d="M7 11V7a5 5 0 0 1 10 0v4"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                          <Input id="password" type="password" placeholder="••••••••" className="pl-9" ...>
+                                            <Input type="password" data-slot="input" className="h-8 w-full..." ...>
+                                              <FieldControl ref={function ref} type="password" data-slot="input" ...>
+                                                <input
+                                                  id="password"
+                                                  disabled={false}
+                                                  name="password"
+                                                  ref={function}
+                                                  aria-labelledby={undefined}
+                                                  autoFocus={false}
+                                                  defaultValue={undefined}
+                                                  onChange={function}
+                                                  onFocus={function onFocus}
+                                                  onBlur={function}
+                                                  onKeyDown={function onKeyDown}
+                                                  type="password"
+                                                  data-slot="input"
+                                                  placeholder="••••••••"
+                                                  className="h-8 w-full min-w-0 rounded-lg border border-input bg-tran..."
+-                                                 data--h-bstatus="0OBSERVED"
+                                                >
+                                      <div
+                                        className="space-y-2"
+-                                       data--h-bstatus="0OBSERVED"
+                                      >
+                                        <Label htmlFor="confirmPas...">
+                                          <label
+                                            data-slot="label"
+                                            className="flex items-center gap-2 text-sm leading-none font-medium select..."
+                                            htmlFor="confirmPassword"
+-                                           data--h-bstatus="0OBSERVED"
+                                          >
++                                           Confirm Password
+                                        <div
+                                          className="relative"
+-                                         data--h-bstatus="0OBSERVED"
+                                        >
+                                          <Lock className="absolute l...">
+                                            <svg
+                                              ref={null}
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              width={24}
+                                              height={24}
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                              stroke="currentColor"
+                                              strokeWidth={2}
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              className="lucide lucide-lock absolute left-3 top-2.5 h-4 w-4 text-muted..."
+                                              aria-hidden="true"
+-                                             data--h-bstatus="0OBSERVED"
+                                            >
+                                              <rect
+                                                width="18"
+                                                height="11"
+                                                x="3"
+                                                y="11"
+                                                rx="2"
+                                                ry="2"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                              <path
+                                                d="M7 11V7a5 5 0 0 1 10 0v4"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                          <Input id="confirmPas..." type="password" placeholder="••••••••" ...>
+                                            <Input type="password" data-slot="input" className="h-8 w-full..." ...>
+                                              <FieldControl ref={function ref} type="password" data-slot="input" ...>
+                                                <input
+                                                  id="confirmPassword"
+                                                  disabled={false}
+                                                  name="confirmPassword"
+                                                  ref={function}
+                                                  aria-labelledby={undefined}
+                                                  autoFocus={false}
+                                                  defaultValue={undefined}
+                                                  onChange={function}
+                                                  onFocus={function onFocus}
+                                                  onBlur={function}
+                                                  onKeyDown={function onKeyDown}
+                                                  type="password"
+                                                  data-slot="input"
+                                                  placeholder="••••••••"
+                                                  className="h-8 w-full min-w-0 rounded-lg border border-input bg-tran..."
+-                                                 data--h-bstatus="0OBSERVED"
+                                                >
+                                      <Button type="submit" className="w-full" disabled={false}>
+                                        <Button data-slot="button" className={"group/bu..."} type="submit" ...>
+                                          <button
+                                            type="submit"
+                                            onClick={function onClick}
+                                            onMouseDown={function onMouseDown}
+                                            onKeyDown={function}
+                                            onKeyUp={function onKeyUp}
+                                            onPointerDown={function onPointerDown}
+                                            tabIndex={0}
+                                            disabled={false}
+                                            data-slot="button"
+                                            ref={function}
+                                            className={"group/button inline-flex shrink-0 items-center justify-center..."}
+-                                           data--h-bstatus="0OBSERVED"
+                                          >
+                                <CardFooter className="justify-ce...">
+                                  <div
+                                    data-slot="card-footer"
+                                    className="flex items-center rounded-b-xl border-t bg-muted/50 p-4 group-data-[siz..."
+-                                   data--h-bstatus="0OBSERVED"
+                                  >
+                                    <p
+                                      className="text-sm text-muted-foreground"
+-                                     data--h-bstatus="0OBSERVED"
+                                    >
+                                      <LinkComponent href="/login" className="text-prima...">
+                                        <a
+                                          className="text-primary font-medium hover:underline"
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/login"
+-                                         data--h-bstatus="0OBSERVED"
+                                        >
++                                         Sign in
+                      ...
+                    ...
+          ...
+ 
+ GET /login?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard 200 in 101ms (next.js: 5ms, proxy.ts: 7ms, application-code: 90ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+                <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={{...}} forbidden={undefined} ...>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/login?cal..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                        <SegmentViewNode type="layout" pagePath="(auth)/lay...">
+                          <SegmentTrieNode>
+                          <AuthLayout>
+                            <div
+                              className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50..."
+-                             data--h-bstatus="0OBSERVED"
+                            >
+                              <div
+                                className="w-full max-w-md"
+-                               data--h-bstatus="0OBSERVED"
+                              >
+                                <div
+                                  className="text-center mb-8"
+-                                 data--h-bstatus="0OBSERVED"
+                                >
+                                  <h1
+                                    className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50"
+-                                   data--h-bstatus="0OBSERVED"
+                                  >
++                                   TaskFlow
+                                  <p
+                                    className="text-slate-500 dark:text-slate-400 mt-2 text-sm"
+-                                   data--h-bstatus="0OBSERVED"
+                                  >
++                                   Stay organized. Stay productive.
+                                ...
+                                  <SegmentViewNode type="page" pagePath="(auth)/log...">
+                                    <SegmentTrieNode>
+                                    <LoginPage>
+                                      <LoginForm>
+                                        <Card className="shadow-lg ...">
+                                          <div
+                                            data-slot="card"
+                                            data-size="default"
+                                            className={"group/card flex flex-col gap-4 overflow-hidden rounded-xl bg-..."}
+-                                           data--h-bstatus="0OBSERVED"
+                                          >
+                                            <CardHeader>
+                                              <div
+                                                data-slot="card-header"
+                                                className="group/card-header @container/card-header grid auto-rows-min..."
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                                <CardTitle className="text-2xl">
+                                                  <div
+                                                    data-slot="card-title"
+                                                    className="font-heading font-medium group-data-[size=sm]/card:text..."
+-                                                   data--h-bstatus="0OBSERVED"
+                                                  >
++                                                   Welcome back
+                                                <CardDescription>
+                                                  <div
+                                                    data-slot="card-description"
+                                                    className="text-sm text-muted-foreground"
+-                                                   data--h-bstatus="0OBSERVED"
+                                                  >
++                                                   Sign in to your TaskFlow account
+                                            <CardContent className="space-y-4">
+                                              <div
+                                                data-slot="card-content"
+                                                className="px-4 group-data-[size=sm]/card:px-3 space-y-4"
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                                <form
+                                                  onSubmit={function}
+                                                  className="space-y-4"
+-                                                 data--h-bstatus="0OBSERVED"
+                                                >
+                                                  <div
+                                                    className="space-y-2"
+-                                                   data--h-bstatus="0OBSERVED"
+                                                  >
+                                                    <Label htmlFor="email">
+                                                      <label
+                                                        data-slot="label"
+                                                        className="flex items-center gap-2 text-sm leading-none font-m..."
+                                                        htmlFor="email"
+-                                                       data--h-bstatus="0OBSERVED"
+                                                      >
++                                                       Email
+                                                    <div
+                                                      className="relative"
+-                                                     data--h-bstatus="0OBSERVED"
+                                                    >
+                                                      <Mail className="absolute l...">
+                                                        <svg
+                                                          ref={null}
+                                                          xmlns="http://www.w3.org/2000/svg"
+                                                          width={24}
+                                                          height={24}
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth={2}
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+                                                          className="lucide lucide-mail absolute left-3 top-2.5 h-4 w-..."
+                                                          aria-hidden="true"
+-                                                         data--h-bstatus="0OBSERVED"
+                                                        >
+                                                          <path
+                                                            d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+-                                                           data--h-bstatus="0OBSERVED"
+                                                          >
+                                                          <rect
+                                                            x="2"
+                                                            y="4"
+                                                            width="20"
+                                                            height="16"
+                                                            rx="2"
+-                                                           data--h-bstatus="0OBSERVED"
+                                                          >
+                                                      <Input id="email" type="email" placeholder="you@exampl..." ...>
+                                                        <Input type="email" data-slot="input" className="h-8 w-full..." ...>
+                                                          <FieldControl ref={function ref} type="email" data-slot="input" ...>
+                                                            <input
+                                                              id="email"
+                                                              disabled={false}
+                                                              name="email"
+                                                              ref={function}
+                                                              aria-labelledby={undefined}
+                                                              autoFocus={false}
+                                                              defaultValue={undefined}
+                                                              onChange={function}
+                                                              onFocus={function onFocus}
+                                                              onBlur={function}
+                                                              onKeyDown={function onKeyDown}
+                                                              type="email"
+                                                              data-slot="input"
+                                                              placeholder="you@example.com"
+                                                              className="h-8 w-full min-w-0 rounded-lg border border-i..."
+-                                                             data--h-bstatus="0OBSERVED"
+                                                            >
+                                                  <div
+                                                    className="space-y-2"
+-                                                   data--h-bstatus="0OBSERVED"
+                                                  >
+                                                    <Label htmlFor="password">
+                                                      <label
+                                                        data-slot="label"
+                                                        className="flex items-center gap-2 text-sm leading-none font-m..."
+                                                        htmlFor="password"
+-                                                       data--h-bstatus="0OBSERVED"
+                                                      >
++                                                       Password
+                                                    <div
+                                                      className="relative"
+-                                                     data--h-bstatus="0OBSERVED"
+                                                    >
+                                                      <Lock className="absolute l...">
+                                                        <svg
+                                                          ref={null}
+                                                          xmlns="http://www.w3.org/2000/svg"
+                                                          width={24}
+                                                          height={24}
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          strokeWidth={2}
+                                                          strokeLinecap="round"
+                                                          strokeLinejoin="round"
+                                                          className="lucide lucide-lock absolute left-3 top-2.5 h-4 w-..."
+                                                          aria-hidden="true"
+-                                                         data--h-bstatus="0OBSERVED"
+                                                        >
+                                                          <rect
+                                                            width="18"
+                                                            height="11"
+                                                            x="3"
+                                                            y="11"
+                                                            rx="2"
+                                                            ry="2"
+-                                                           data--h-bstatus="0OBSERVED"
+                                                          >
+                                                          <path
+                                                            d="M7 11V7a5 5 0 0 1 10 0v4"
+-                                                           data--h-bstatus="0OBSERVED"
+                                                          >
+                                                      <Input id="password" type="password" placeholder="••••••••" ...>
+                                                        <Input type="password" data-slot="input" ...>
+                                                          <FieldControl ref={function ref} type="password" ...>
+                                                            <input
+                                                              id="password"
+                                                              disabled={false}
+                                                              name="password"
+                                                              ref={function}
+                                                              aria-labelledby={undefined}
+                                                              autoFocus={false}
+                                                              defaultValue={undefined}
+                                                              onChange={function}
+                                                              onFocus={function onFocus}
+                                                              onBlur={function}
+                                                              onKeyDown={function onKeyDown}
+                                                              type="password"
+                                                              data-slot="input"
+                                                              placeholder="••••••••"
+                                                              className="h-8 w-full min-w-0 rounded-lg border border-i..."
+-                                                             data--h-bstatus="0OBSERVED"
+                                                            >
+                                                  <Button type="submit" className="w-full" disabled={false}>
+                                                    <Button data-slot="button" className={"group/bu..."} type="submit" ...>
+                                                      <button
+                                                        type="submit"
+                                                        onClick={function onClick}
+                                                        onMouseDown={function onMouseDown}
+                                                        onKeyDown={function}
+                                                        onKeyUp={function onKeyUp}
+                                                        onPointerDown={function onPointerDown}
+                                                        tabIndex={0}
+                                                        disabled={false}
+                                                        data-slot="button"
+                                                        ref={function}
+                                                        className={"group/button inline-flex shrink-0 items-center ju..."}
+-                                                       data--h-bstatus="0OBSERVED"
+                                                      >
+                                            <CardFooter className="justify-ce...">
+                                              <div
+                                                data-slot="card-footer"
+                                                className="flex items-center rounded-b-xl border-t bg-muted/50 p-4 gro..."
+-                                               data--h-bstatus="0OBSERVED"
+                                              >
+                                                <p
+                                                  className="text-sm text-muted-foreground"
+-                                                 data--h-bstatus="0OBSERVED"
+                                                >
+                                                  <LinkComponent href="/register" className="text-prima...">
+                                                    <a
+                                                      className="text-primary font-medium hover:underline"
+                                                      ref={function}
+                                                      onClick={function onClick}
+                                                      onMouseEnter={function onMouseEnter}
+                                                      onTouchStart={function onTouchStart}
+                                                      href="/register"
+-                                                     data--h-bstatus="0OBSERVED"
+                                                    >
++                                                     Create one
+                      ...
+          ...
+ 
+ GET /register 200 in 55ms (next.js: 6ms, proxy.ts: 14ms, application-code: 35ms)
