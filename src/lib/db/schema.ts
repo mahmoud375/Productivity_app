@@ -1,49 +1,50 @@
-import { pgTable, uuid, varchar, text, boolean, integer, timestamp, index } from "drizzle-orm/pg-core";
+import { pgTable, uuid, varchar, text, boolean, integer, timestamp, index, primaryKey } from "drizzle-orm/pg-core";
 
-// ─── Auth Tables (NextAuth.js compatible) ────────────────────────────
+// ─── Auth Tables (NextAuth.js v5 compatible) ─────────────────────────
 
 export const users = pgTable("users", {
   id:              uuid("id").defaultRandom().primaryKey(),
   name:            varchar("name", { length: 255 }),
   email:           varchar("email", { length: 255 }).notNull().unique(),
   passwordHash:    varchar("password_hash", { length: 255 }),   // null for OAuth users
+  emailVerified:   timestamp("email_verified", { mode: "date" }),
   image:           varchar("image", { length: 512 }),
-  emailVerifiedAt: timestamp("email_verified_at", { mode: "date" }),
   createdAt:       timestamp("created_at", { mode: "date" }).defaultNow().notNull(),
   updatedAt:       timestamp("updated_at", { mode: "date" }).defaultNow().notNull(),
 });
 
 export const accounts = pgTable("accounts", {
-  id:                uuid("id").defaultRandom().primaryKey(),
-  userId:            uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
-  type:              varchar("type", { length: 50 }).notNull(),           // "oauth" | "credentials"
-  provider:          varchar("provider", { length: 50 }).notNull(),       // "google" | "github" | "credentials"
-  providerAccountId: varchar("provider_account_id", { length: 255 }).notNull(),
-  accessToken:       text("access_token"),
-  refreshToken:      text("refresh_token"),
-  expiresAt:         integer("expires_at"),
-  tokenType:         varchar("token_type", { length: 50 }),
+  userId:            uuid("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  type:              varchar("type", { length: 50 }).notNull(),
+  provider:          varchar("provider", { length: 50 }).notNull(),
+  providerAccountId: varchar("providerAccountId", { length: 255 }).notNull(),
+  refresh_token:     text("refresh_token"),
+  access_token:      text("access_token"),
+  expires_at:        integer("expires_at"),
+  token_type:        varchar("token_type", { length: 50 }),
   scope:             varchar("scope", { length: 255 }),
-  idToken:           text("id_token"),
-}, (table) => [
-  index("idx_accounts_user_id").on(table.userId),
+  id_token:          text("id_token"),
+  session_state:     varchar("session_state", { length: 255 }),
+}, (account) => [
+  primaryKey({ columns: [account.provider, account.providerAccountId] }),
+  index("idx_accounts_user_id").on(account.userId),
 ]);
 
 export const sessions = pgTable("sessions", {
-  id:           uuid("id").defaultRandom().primaryKey(),
-  userId:       uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
-  sessionToken: varchar("session_token", { length: 255 }).notNull().unique(),
+  sessionToken: varchar("sessionToken", { length: 255 }).notNull().primaryKey(),
+  userId:       uuid("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
   expires:      timestamp("expires", { mode: "date" }).notNull(),
 }, (table) => [
   index("idx_sessions_user_id").on(table.userId),
-  index("idx_sessions_token").on(table.sessionToken),
 ]);
 
 export const verificationTokens = pgTable("verification_tokens", {
   identifier: varchar("identifier", { length: 255 }).notNull(),
-  token:      varchar("token", { length: 255 }).notNull().unique(),
+  token:      varchar("token", { length: 255 }).notNull(),
   expires:    timestamp("expires", { mode: "date" }).notNull(),
-});
+}, (vt) => [
+  primaryKey({ columns: [vt.identifier, vt.token] }),
+]);
 
 // ─── Application Tables ──────────────────────────────────────────────
 
