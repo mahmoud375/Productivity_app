@@ -8,7 +8,6 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useTasks } from "@/hooks/use-tasks";
 import type { TaskQueryInput } from "@/lib/validators/task.schema";
-import type { TaskWithSubtasks } from "@/types/task";
 
 export function TaskList() {
   const [filters, setFilters] = useState<Partial<TaskQueryInput>>({});
@@ -54,7 +53,7 @@ export function TaskList() {
           {data.tasks.map((task) => (
             <TaskCard
               key={task.id}
-              task={task as TaskWithSubtasks}
+              task={task}
             />
           ))}
         </div>

@@ -11,7 +11,7 @@ import type {
 } from "@/lib/validators/task.schema";
 
 interface TasksResponse {
-  tasks: Task[];
+  tasks: TaskWithSubtasks[];
   total: number;
   page: number;
   limit: number;

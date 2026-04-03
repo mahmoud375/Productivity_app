@@ -1,13 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth/auth";
 import { db } from "@/lib/db";
-import { tasks } from "@/lib/db/schema";
-import { eq, ilike, and, desc, asc, count, type SQL } from "drizzle-orm";
+import { tasks, subtasks } from "@/lib/db/schema";
+import { eq, ilike, and, desc, asc, count, inArray, type SQL } from "drizzle-orm";
 import {
   createTaskSchema,
   taskQuerySchema,
 } from "@/lib/validators/task.schema";
 import { apiSuccess, apiError } from "@/types/api";
+import type { Subtask } from "@/types/task";
 
 export async function GET(request: NextRequest) {
   try {
@@ -74,9 +75,38 @@ export async function GET(request: NextRequest) {
       .limit(limit)
       .offset(offset);
 
+    // Batch-fetch subtasks for all returned tasks (2 queries, not N+1)
+    let tasksWithSubtasks: ((typeof taskList)[number] & { subtasks: Subtask[] })[];
+    if (taskList.length > 0) {
+      const taskIds = taskList.map((t) => t.id);
+      const allSubtasks = await db
+        .select()
+        .from(subtasks)
+        .where(inArray(subtasks.taskId, taskIds))
+        .orderBy(subtasks.sortOrder);
+
+      // Group subtasks by taskId
+      const subtasksByTaskId = new Map<string, (typeof allSubtasks)[number][]>();
+      for (const st of allSubtasks) {
+        const existing = subtasksByTaskId.get(st.taskId);
+        if (existing) {
+          existing.push(st);
+        } else {
+          subtasksByTaskId.set(st.taskId, [st]);
+        }
+      }
+
+      tasksWithSubtasks = taskList.map((task) => ({
+        ...task,
+        subtasks: subtasksByTaskId.get(task.id) ?? [],
+      }));
+    } else {
+      tasksWithSubtasks = [];
+    }
+
     return NextResponse.json(
       apiSuccess({
-        tasks: taskList,
+        tasks: tasksWithSubtasks,
         total,
         page,
         limit,
