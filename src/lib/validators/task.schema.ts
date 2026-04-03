@@ -22,5 +22,6 @@ export const taskQuerySchema = z.object({
 });
 
 export type CreateTaskInput = z.infer<typeof createTaskSchema>;
+export type CreateTaskFormInput = z.input<typeof createTaskSchema>;
 export type UpdateTaskInput = z.infer<typeof updateTaskSchema>;
 export type TaskQueryInput = z.infer<typeof taskQuerySchema>;
