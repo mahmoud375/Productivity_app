@@ -1,6 +1,5 @@
 "use client";
 
-import { toast } from "sonner";
 import { ListChecks } from "lucide-react";
 import { SubtaskItem } from "./subtask-item";
 import { SubtaskAddInput } from "./subtask-add-input";
@@ -23,38 +22,19 @@ export function SubtaskList({ taskId }: SubtaskListProps) {
   const deleteSubtask = useDeleteSubtask(taskId);
 
   function handleAdd(title: string) {
-    createSubtask.mutate(
-      { title },
-      {
-        onSuccess: () => toast.success("Subtask added"),
-        onError: () => toast.error("Failed to add subtask"),
-      }
-    );
+    createSubtask.mutate({ title });
   }
 
   function handleToggle(subtaskId: string, isCompleted: boolean) {
-    updateSubtask.mutate(
-      { subtaskId, data: { isCompleted } },
-      {
-        onError: () => toast.error("Failed to update subtask"),
-      }
-    );
+    updateSubtask.mutate({ subtaskId, data: { isCompleted } });
   }
 
   function handleUpdate(subtaskId: string, title: string) {
-    updateSubtask.mutate(
-      { subtaskId, data: { title } },
-      {
-        onError: () => toast.error("Failed to update subtask"),
-      }
-    );
+    updateSubtask.mutate({ subtaskId, data: { title } });
   }
 
   function handleDelete(subtaskId: string) {
-    deleteSubtask.mutate(subtaskId, {
-      onSuccess: () => toast.success("Subtask deleted"),
-      onError: () => toast.error("Failed to delete subtask"),
-    });
+    deleteSubtask.mutate(subtaskId);
   }
 
   const isMutating =

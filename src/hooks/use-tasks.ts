@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 import { api } from "@/lib/api-client";
 import { QUERY_KEYS } from "@/lib/constants";
 import type { Task, TaskWithSubtasks } from "@/types/task";
@@ -51,6 +52,10 @@ export function useCreateTask() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.tasks });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.stats });
+      toast.success("Task created");
+    },
+    onError: () => {
+      toast.error("Failed to create task");
     },
   });
 }
@@ -64,6 +69,10 @@ export function useUpdateTask(taskId: string) {
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.tasks });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.task(taskId) });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.stats });
+      toast.success("Task updated");
+    },
+    onError: () => {
+      toast.error("Failed to update task");
     },
   });
 }
@@ -75,6 +84,10 @@ export function useDeleteTask() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.tasks });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.stats });
+      toast.success("Task deleted");
+    },
+    onError: () => {
+      toast.error("Failed to delete task");
     },
   });
 }

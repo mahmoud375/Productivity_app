@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 import { api } from "@/lib/api-client";
 import { QUERY_KEYS } from "@/lib/constants";
 import type { Subtask, TaskWithSubtasks } from "@/types/task";
@@ -51,6 +52,10 @@ export function useCreateSubtask(taskId: string) {
       });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.task(taskId) });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.tasks });
+      toast.success("Subtask added");
+    },
+    onError: () => {
+      toast.error("Failed to add subtask");
     },
   });
 }
@@ -178,6 +183,7 @@ export function useUpdateSubtask(taskId: string) {
           context.previousTasksList
         );
       }
+      toast.error("Failed to update subtask");
     },
 
     onSettled: () => {
@@ -203,6 +209,10 @@ export function useDeleteSubtask(taskId: string) {
       });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.task(taskId) });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.tasks });
+      toast.success("Subtask deleted");
+    },
+    onError: () => {
+      toast.error("Failed to delete subtask");
     },
   });
 }
