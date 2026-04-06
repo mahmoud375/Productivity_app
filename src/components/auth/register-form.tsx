@@ -20,6 +20,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { registerSchema, type RegisterInput } from "@/lib/validators/auth.schema";
+import { SocialLoginButtons } from "@/components/auth/social-login-buttons";
 
 export function RegisterForm() {
   const router = useRouter();
@@ -158,6 +159,8 @@ export function RegisterForm() {
             Create Account
           </Button>
         </form>
+
+        <SocialLoginButtons />
       </CardContent>
       <CardFooter className="justify-center">
         <p className="text-sm text-muted-foreground">

@@ -20,6 +20,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { loginSchema, type LoginInput } from "@/lib/validators/auth.schema";
+import { SocialLoginButtons } from "@/components/auth/social-login-buttons";
 
 export function LoginForm() {
   const router = useRouter();
@@ -106,6 +107,8 @@ export function LoginForm() {
             Sign In
           </Button>
         </form>
+
+        <SocialLoginButtons />
       </CardContent>
       <CardFooter className="justify-center">
         <p className="text-sm text-muted-foreground">
