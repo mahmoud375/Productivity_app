@@ -26,6 +26,8 @@ export function TaskList() {
     search: searchParams.get("search") ?? undefined,
     sort: (searchParams.get("sort") as TaskQueryInput["sort"]) ?? undefined,
     order: (searchParams.get("order") as TaskQueryInput["order"]) ?? undefined,
+    filterStartDate: searchParams.get("filterStartDate") ?? undefined,
+    filterEndDate: searchParams.get("filterEndDate") ?? undefined,
   };
 
   const { data, isLoading, isError } = useTasks(filters);
@@ -58,6 +60,10 @@ export function TaskList() {
       else updates.sort = undefined;
       if (f.order) updates.order = f.order;
       else updates.order = undefined;
+      if (f.filterStartDate) updates.filterStartDate = f.filterStartDate;
+      else updates.filterStartDate = undefined;
+      if (f.filterEndDate) updates.filterEndDate = f.filterEndDate;
+      else updates.filterEndDate = undefined;
       updateSearchParams(updates);
     },
     [updateSearchParams]

@@ -26,6 +26,8 @@ export function useTasks(filters?: Partial<TaskQueryInput>) {
   if (filters?.order) params.set("order", filters.order);
   if (filters?.page) params.set("page", String(filters.page));
   if (filters?.limit) params.set("limit", String(filters.limit));
+  if (filters?.filterStartDate) params.set("filterStartDate", filters.filterStartDate);
+  if (filters?.filterEndDate) params.set("filterEndDate", filters.filterEndDate);
 
   return useQuery({
     queryKey: [...QUERY_KEYS.tasks, filters],

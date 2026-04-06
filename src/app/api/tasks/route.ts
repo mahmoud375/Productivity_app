@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth/auth";
 import { db } from "@/lib/db";
 import { tasks, subtasks } from "@/lib/db/schema";
-import { eq, ilike, and, desc, asc, count, inArray, type SQL } from "drizzle-orm";
+import { eq, ilike, and, desc, asc, count, inArray, gte, lte, type SQL } from "drizzle-orm";
 import {
   createTaskSchema,
   taskQuerySchema,
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { status, search, sort, order, page, limit } = parsed.data;
+    const { status, search, sort, order, page, limit, filterStartDate, filterEndDate } = parsed.data;
 
     // Build WHERE conditions
     const conditions: SQL[] = [eq(tasks.userId, session.user.id)];
@@ -44,6 +44,14 @@ export async function GET(request: NextRequest) {
 
     if (search) {
       conditions.push(ilike(tasks.title, `%${search}%`));
+    }
+
+    if (filterStartDate) {
+      conditions.push(gte(tasks.startDate, new Date(filterStartDate)));
+    }
+
+    if (filterEndDate) {
+      conditions.push(lte(tasks.endDate, new Date(filterEndDate)));
     }
 
     const whereClause = and(...conditions);
