@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, Edit2, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
 import { TaskForm } from "@/components/tasks/task-form";
 import { TaskDeleteDialog } from "@/components/tasks/task-delete-dialog";
 import { TaskProgressBar } from "@/components/tasks/task-progress-bar";
 import { TaskStatusBadge } from "@/components/tasks/task-status-badge";
+import { SubtaskList } from "@/components/tasks/subtask-list";
 import { useTask } from "@/hooks/use-tasks";
 import { formatDateRange, isOverdue } from "@/lib/utils";
 
@@ -114,6 +116,11 @@ export default function TaskDetailPage({
               completed={completedSubtasks}
             />
           )}
+
+          <Separator />
+
+          {/* Subtask Management */}
+          <SubtaskList taskId={task.id} />
         </div>
       )}
     </div>
