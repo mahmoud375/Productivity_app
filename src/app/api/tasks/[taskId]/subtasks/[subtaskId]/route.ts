@@ -89,13 +89,20 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
 
     const { title, isCompleted } = parsed.data;
 
+    const updateData: Partial<{
+      title: string;
+      isCompleted: boolean;
+      updatedAt: Date;
+    }> = {
+      updatedAt: new Date(),
+    };
+
+    if (title !== undefined) updateData.title = title;
+    if (isCompleted !== undefined) updateData.isCompleted = isCompleted;
+
     const [updatedSubtask] = await db
       .update(subtasks)
-      .set({
-        title: title !== undefined ? title : undefined,
-        isCompleted: isCompleted !== undefined ? isCompleted : undefined,
-        updatedAt: new Date(),
-      })
+      .set(updateData)
       .where(eq(subtasks.id, subtaskId))
       .returning();
 

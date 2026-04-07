@@ -88,16 +88,26 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
     const { title, description, status, startDate, endDate } = parsed.data;
 
     // Build update values — only include fields that were provided
+    const updateData: Partial<{
+      title: string;
+      description: string | null;
+      status: string;
+      startDate: Date | null;
+      endDate: Date | null;
+      updatedAt: Date;
+    }> = {
+      updatedAt: new Date(),
+    };
+
+    if (title !== undefined) updateData.title = title;
+    if (description !== undefined) updateData.description = description ?? null;
+    if (status !== undefined) updateData.status = status;
+    if (startDate !== undefined) updateData.startDate = startDate ? new Date(startDate) : null;
+    if (endDate !== undefined) updateData.endDate = endDate ? new Date(endDate) : null;
+
     const [updatedTask] = await db
       .update(tasks)
-      .set({
-        title: title !== undefined ? title : undefined,
-        description: description !== undefined ? (description ?? null) : undefined,
-        status: status !== undefined ? status : undefined,
-        startDate: startDate !== undefined ? (startDate ? new Date(startDate) : null) : undefined,
-        endDate: endDate !== undefined ? (endDate ? new Date(endDate) : null) : undefined,
-        updatedAt: new Date(),
-      })
+      .set(updateData)
       .where(eq(tasks.id, taskId))
       .returning();
 
