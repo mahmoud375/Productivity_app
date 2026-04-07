@@ -89,16 +89,13 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
 
     const { title, isCompleted } = parsed.data;
 
-    const updateValues: Record<string, unknown> = {
-      updatedAt: new Date(),
-    };
-
-    if (title !== undefined) updateValues.title = title;
-    if (isCompleted !== undefined) updateValues.isCompleted = isCompleted;
-
     const [updatedSubtask] = await db
       .update(subtasks)
-      .set(updateValues)
+      .set({
+        title: title !== undefined ? title : undefined,
+        isCompleted: isCompleted !== undefined ? isCompleted : undefined,
+        updatedAt: new Date(),
+      })
       .where(eq(subtasks.id, subtaskId))
       .returning();
 
