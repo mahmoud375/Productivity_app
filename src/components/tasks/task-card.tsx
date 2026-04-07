@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { TaskStatusBadge } from "./task-status-badge";
 import { TaskProgressBar } from "./task-progress-bar";
 import { formatDateRange, isOverdue } from "@/lib/utils";
-import type { TaskWithSubtasks } from "@/types/task";
+import type { TaskWithSubtasks, Subtask } from "@/types/task";
 
 interface TaskCardProps {
   task: TaskWithSubtasks;
@@ -14,14 +14,14 @@ interface TaskCardProps {
 
 export function TaskCard({ task }: TaskCardProps) {
   const completedSubtasks = task.subtasks.filter(
-    (s) => s.isCompleted
+    (s: Subtask) => s.isCompleted
   ).length;
   const totalSubtasks = task.subtasks.length;
   const overdue = isOverdue(task.endDate, task.status);
 
   return (
     <Link href={`/tasks/${task.id}`}>
-      <Card className="hover:shadow-md transition-shadow cursor-pointer group border-border">
+      <Card className="hover:shadow-md transition-shadow cursor-pointer group border-border animate-in fade-in slide-in-from-bottom-2 duration-300 fill-mode-both">
         <CardHeader className="pb-2">
           <div className="flex items-start justify-between gap-2">
             <h3 className="font-semibold text-sm leading-tight line-clamp-2 group-hover:text-primary transition-colors">

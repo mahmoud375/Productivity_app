@@ -49,9 +49,12 @@ const cards = [
 export function StatsCards({ stats, isLoading }: StatsCardsProps) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {cards.map(({ key, label, icon: Icon, color, bg }) => (
-        <Card key={key} className="relative overflow-hidden">
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
+      {cards.map(({ key, label, icon: Icon, color, bg }, index) => (
+        <Card
+          key={key}
+          className="relative overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-500 fill-mode-both"
+          style={{ animationDelay: `${index * 100}ms` }}
+        >          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">
               {label}
             </CardTitle>

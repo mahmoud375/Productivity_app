@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Trash2, Loader2 } from "lucide-react";
-import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -32,11 +31,9 @@ export function TaskDeleteDialog({
   function handleDelete() {
     deleteTask(taskId, {
       onSuccess: () => {
-        toast.success("Task deleted");
         setOpen(false);
         router.push("/tasks");
       },
-      onError: () => toast.error("Failed to delete task"),
     });
   }
 

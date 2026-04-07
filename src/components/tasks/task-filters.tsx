@@ -74,6 +74,7 @@ export function TaskFilters({ onFiltersChange }: TaskFiltersProps) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
+            aria-label="Search tasks"
           />
         </div>
         <Select value={status} onValueChange={(v) => setStatus(v ?? "all")}>
@@ -108,6 +109,7 @@ export function TaskFilters({ onFiltersChange }: TaskFiltersProps) {
               setStartDate("");
               setEndDate("");
             }}
+            aria-label="Clear all filters"
           >
             <X className="h-4 w-4" />
           </Button>

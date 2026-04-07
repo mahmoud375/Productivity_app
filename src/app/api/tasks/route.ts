@@ -8,6 +8,7 @@ import {
   taskQuerySchema,
 } from "@/lib/validators/task.schema";
 import { apiSuccess, apiError } from "@/types/api";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import type { Subtask } from "@/types/task";
 
 export async function GET(request: NextRequest) {
@@ -18,6 +19,9 @@ export async function GET(request: NextRequest) {
         status: 401,
       });
     }
+
+    const { success, headers } = await checkRateLimit(`tasks:${session.user.id}`);
+    if (!success) return rateLimitResponse(headers);
 
     const { searchParams } = new URL(request.url);
     const params = Object.fromEntries(searchParams.entries());
@@ -86,7 +90,7 @@ export async function GET(request: NextRequest) {
     // Batch-fetch subtasks for all returned tasks (2 queries, not N+1)
     let tasksWithSubtasks: ((typeof taskList)[number] & { subtasks: Subtask[] })[];
     if (taskList.length > 0) {
-      const taskIds = taskList.map((t) => t.id);
+      const taskIds = taskList.map((t: { id: string }) => t.id);
       const allSubtasks = await db
         .select()
         .from(subtasks)
@@ -104,7 +108,7 @@ export async function GET(request: NextRequest) {
         }
       }
 
-      tasksWithSubtasks = taskList.map((task) => ({
+      tasksWithSubtasks = taskList.map((task: (typeof taskList)[0]) => ({
         ...task,
         subtasks: subtasksByTaskId.get(task.id) ?? [],
       }));
@@ -138,6 +142,9 @@ export async function POST(request: NextRequest) {
         status: 401,
       });
     }
+
+    const { success, headers } = await checkRateLimit(`tasks:${session.user.id}`);
+    if (!success) return rateLimitResponse(headers);
 
     const body = await request.json();
     const parsed = createTaskSchema.safeParse(body);

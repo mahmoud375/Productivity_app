@@ -34,8 +34,10 @@ export function UserMenu({ user }: UserMenuProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-2 rounded-full outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
-        <Avatar className="h-8 w-8 cursor-pointer">
+      <DropdownMenuTrigger
+        className="flex items-center gap-2 rounded-full outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        aria-label="User menu"
+      >        <Avatar className="h-8 w-8 cursor-pointer">
           <AvatarImage src={user.image ?? ""} alt={user.name ?? "User"} />
           <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">
             {initials}

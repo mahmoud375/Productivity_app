@@ -5,9 +5,14 @@ import { users } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { registerSchema } from "@/lib/validators/auth.schema";
 import { apiSuccess, apiError } from "@/types/api";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: use IP for unauthenticated endpoint
+    const ip = request.headers.get("x-forwarded-for") ?? "anonymous";
+    const { success, headers } = await checkRateLimit(`register:${ip}`);
+    if (!success) return rateLimitResponse(headers);
     const body = await request.json();
 
     const parsed = registerSchema.safeParse(body);
