@@ -29,5 +29,13 @@ export function useStats() {
   return useQuery({
     queryKey: QUERY_KEYS.stats,
     queryFn: () => api.get<StatsResponse>("/api/stats"),
+    select: (data) => ({
+      totalTasks: data?.totalTasks ?? 0,
+      completed: data?.completed ?? 0,
+      inProgress: data?.inProgress ?? 0,
+      overdue: data?.overdue ?? 0,
+      completionTrends: Array.isArray(data?.completionTrends) ? data.completionTrends : [],
+      recentActivity: Array.isArray(data?.recentActivity) ? data.recentActivity : [],
+    }),
   });
 }

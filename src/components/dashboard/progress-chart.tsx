@@ -24,7 +24,8 @@ function formatDay(dateStr: string): string {
 }
 
 export function ProgressChart({ trends, isLoading }: ProgressChartProps) {
-  const chartData = trends?.map((t) => ({
+  const safeTrends = Array.isArray(trends) ? trends : [];
+  const chartData = safeTrends.map((t) => ({
     day: formatDay(t.date),
     count: t.count,
   }));

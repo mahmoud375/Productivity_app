@@ -29,7 +29,7 @@ export async function GET() {
 
     // ── Completion trends: tasks completed per day over the last 7 days ──
     // Uses generate_series to ensure all 7 days are present even with 0 completions
-    const completionTrends = await db.execute<{
+    const trendsResult = await db.execute<{
       date: string;
       count: number;
     }>(sql`
@@ -49,6 +49,11 @@ export async function GET() {
       ORDER BY d
     `);
 
+    // Safely extract rows depending on the underlying driver (some return arrays, some return objects with .rows)
+    const completionTrends = Array.isArray(trendsResult)
+      ? trendsResult
+      : (trendsResult as { rows?: { date: string; count: number }[] }).rows ?? [];
+
     // ── Recent activity: 5 most recently updated tasks ──
     const recentActivity = await db
       .select({
@@ -62,12 +67,19 @@ export async function GET() {
       .orderBy(desc(tasks.updatedAt))
       .limit(5);
 
+    const safeCounts = counts || {
+      totalTasks: 0,
+      completed: 0,
+      inProgress: 0,
+      overdue: 0,
+    };
+
     return NextResponse.json(
       apiSuccess({
-        totalTasks: counts.totalTasks,
-        completed: counts.completed,
-        inProgress: counts.inProgress,
-        overdue: counts.overdue,
+        totalTasks: safeCounts.totalTasks,
+        completed: safeCounts.completed,
+        inProgress: safeCounts.inProgress,
+        overdue: safeCounts.overdue,
         completionTrends,
         recentActivity,
       })
