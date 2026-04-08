@@ -4,22 +4,33 @@ import { NextResponse } from "next/server";
 
 /**
  * Fail-open rate limiter.
- * If UPSTASH_REDIS_REST_URL is not set, all requests are silently allowed.
+ * If UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN are missing, empty,
+ * or otherwise invalid, all requests are silently allowed (fail-open).
+ *
+ * Critical: the Redis constructor is wrapped in try/catch so that a
+ * misconfigured env var can NEVER throw at module-initialisation time and
+ * crash every API route that imports this file.
  */
 
 let ratelimit: Ratelimit | null = null;
 
-if (
-  process.env.UPSTASH_REDIS_REST_URL &&
-  process.env.UPSTASH_REDIS_REST_TOKEN
-) {
-  ratelimit = new Ratelimit({
-    redis: Redis.fromEnv(),
-    // 30 requests per 10 seconds sliding window
-    limiter: Ratelimit.slidingWindow(30, "10 s"),
-    analytics: true,
-    prefix: "taskflow:ratelimit",
-  });
+const redisUrl = (process.env.UPSTASH_REDIS_REST_URL ?? "").trim();
+const redisToken = (process.env.UPSTASH_REDIS_REST_TOKEN ?? "").trim();
+
+if (redisUrl && redisToken) {
+  try {
+    ratelimit = new Ratelimit({
+      redis: Redis.fromEnv(),
+      // 30 requests per 10 seconds sliding window
+      limiter: Ratelimit.slidingWindow(30, "10 s"),
+      analytics: true,
+      prefix: "taskflow:ratelimit",
+    });
+  } catch (err) {
+    // Construction failed (e.g. malformed URL). Log once and stay fail-open.
+    console.warn("[rate-limit] Failed to initialise Upstash Redis — running fail-open.", err);
+    ratelimit = null;
+  }
 }
 
 interface RateLimitResult {

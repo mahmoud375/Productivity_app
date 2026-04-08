@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   CheckSquare,
   Settings,
+  UserCircle,
   Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,7 @@ const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/tasks", label: "Tasks", icon: CheckSquare },
   { href: "/settings", label: "Settings", icon: Settings },
+  { href: "/profile", label: "Profile", icon: UserCircle },
 ];
 
 export function Sidebar() {

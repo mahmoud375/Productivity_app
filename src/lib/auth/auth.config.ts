@@ -11,7 +11,8 @@ export const authConfig: NextAuthConfig = {
       const isOnDashboard =
         nextUrl.pathname.startsWith("/dashboard") ||
         nextUrl.pathname.startsWith("/tasks") ||
-        nextUrl.pathname.startsWith("/settings");
+        nextUrl.pathname.startsWith("/settings") ||
+        nextUrl.pathname.startsWith("/profile");
 
       if (isOnDashboard) {
         if (isLoggedIn) return true;
